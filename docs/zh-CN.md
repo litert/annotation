@@ -22,8 +22,8 @@ LiteRT/Annotation 提供了 4 个工具方法，可以提取 PHP 类、（类）
 
 ```php
 /**
- * @auth(type=login)
- * @route(method=GET,uri="/")
+ * @auth ( type = login )
+ * @route( method = GET, uri="/" )
  */
 ```
 
@@ -42,8 +42,6 @@ LiteRT/Annotation 提供了 4 个工具方法，可以提取 PHP 类、（类）
     ]
 ]
 ```
-
-> 提示：使用参数式注解时，注解名称和括号之间不能有空白。
 
 ### 1.3. 全参数式
 

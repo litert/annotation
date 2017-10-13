@@ -22,7 +22,7 @@ class ABC
     public $ggg;
 
     /**
-     * @route(method=GET,path="/")
+     * @route(method = GET, path = "/")
      */
     public $uri;
 
@@ -39,8 +39,8 @@ class ABC
 /**
  * @author angus
  *
- * @test(comment=1)
- * @hello(speak=yes,to="world")
+ * @test ( comment=1 )
+ * @hello( speak = yes , to=   "world ")
  * @go()
  */
 function test()

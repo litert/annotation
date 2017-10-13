@@ -201,7 +201,7 @@ class Extractor
     {
         $ret = [];
 
-        if (preg_match_all('~@([-\.\w]+)(\(([^\r\n]+)?\)|[ \t]+([^\r\n]+))?~', $docComment, $result)) {
+        if (preg_match_all('~@([-\.\w]+)([ \t]*\(([^\r\n]+)?\)|[ \t]+([^\r\n]+))?~', $docComment, $result)) {
 
             $max = count($result[0]);
 
@@ -218,7 +218,7 @@ class Extractor
                     $data = [];
 
                     if (preg_match_all(
-                        '~([-\w]+)\=([^",]+|".+?")~',
+                        '~([-\w]+)[ \t]*\=[ \t]*([^ \t",]+|".+?")~',
                         $result[3][$i],
                         $vars
                     )) {

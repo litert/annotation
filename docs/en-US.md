@@ -21,12 +21,12 @@ Annotation of this style will be parsed into `['test' => [true]]`.
 
 ### 1.2. Argument-style
 
-The annonation with arguments, such as
+The annotation with arguments, such as
 
 ```php
 /**
- * @auth(type=login)
- * @route(method=GET,uri="/")
+ * @auth ( type = login )
+ * @route( method = GET, uri="/" )
  */
 ```
 
@@ -46,7 +46,7 @@ will be parsed into
 ]
 ```
 
-> Tips: no blank between the left-bracket and name of annoation.
+> Tips: no blank between the left-bracket and name of annotation.
 
 ### 1.3. Line-argument-style
 
