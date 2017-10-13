@@ -1,0 +1,45 @@
+{
+    "name" : "litert/annotation",
+    "description" : "A tool kits about annotations for LiteRT.",
+    "type" : "library",
+    "license" : "Apache-2.0",
+    "minimum-stability": "stable",
+    "version": "0.1.0",
+    "autoload" : {
+        "psr-4" : {
+            "L\\Annotation\\" : "lib"
+        },
+        "files": [
+            "lib/Constants.php"
+        ]
+    },
+    "homepage" : "https://fenying.net",
+    "support" : {
+        "email" : "i.am.x.fenying@gmail.com",
+        "issues" : "https://github.com/litert/annotation/issues",
+        "source" : "https://github.com/litert/annotation/"
+    },
+    "require": {
+        "php": ">=7.0.0",
+        "litert/core": "^0.1.0"
+    },
+    "authors" : [{
+        "name" : "Angus.Fenying",
+        "email" : "i.am.x.fenying@gmail.com",
+        "homepage" : "https://fenying.net",
+        "role" : "Master"
+    }],
+    "keywords" : [
+        "litert", "annotation"
+    ],
+    "repositories" : [{
+        "type" : "git",
+        "url" : "git@github.com:litert/annotation.git",
+        "name" : "annotation"
+    }],
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1.x-dev"
+        }
+    }
+}

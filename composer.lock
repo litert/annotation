@@ -1,0 +1,72 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "e33b35b183d500e3b3432786af786c53",
+    "packages": [
+        {
+            "name": "litert/core",
+            "version": "0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/litert/core.git",
+                "reference": "843b8b667537ffd4a653f20db2c93cbf70589292"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/litert/core/zipball/843b8b667537ffd4a653f20db2c93cbf70589292",
+                "reference": "843b8b667537ffd4a653f20db2c93cbf70589292",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "L\\Core\\": "lib"
+                },
+                "files": [
+                    "lib/lang_ext.php",
+                    "lib/errors.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Angus.Fenying",
+                    "email": "i.am.x.fenying@gmail.com",
+                    "homepage": "https://fenying.net",
+                    "role": "Master"
+                }
+            ],
+            "description": "The core of LiteRT.",
+            "homepage": "https://fenying.net",
+            "keywords": [
+                "core",
+                "litert"
+            ],
+            "time": "2017-09-29T08:24:23+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=7.0.0"
+    },
+    "platform-dev": []
+}
