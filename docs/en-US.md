@@ -79,18 +79,20 @@ This method helps extract the annotations from a class.
 
     ```php
     public static function fromClass(
-        string $class
+        string $class,
+        bool $withParents = false
     ): array;
     ```
 
 -   Arguments
 
     - `$class` must be the full name of class, with namespace.
+    - `$withParents` Also extract from the method prototypes.
 
 -   Return Value
 
-    Returns an associated array, with the annonation names as keys.
-    An empty array willy will be returned if no annoations were found.
+    Returns an associated array, with the annotation names as keys.
+    An empty array willy will be returned if no annotations were found.
 
     > **If the target doesn't exist, a exception of type`\L\Core\Exception`
     > will be thrown.**
@@ -125,7 +127,8 @@ This method helps extract the annotations from a method.
     ```php
     public static function fromMethod(
         string $method,
-        string $class = null
+        string $class = null,
+        bool $withParents = false
     ): array;
     ```
 
@@ -133,14 +136,15 @@ This method helps extract the annotations from a method.
 
     - `$method` The name of method.
     - `$class` The full name of class, with namespace.
+    - `$withParents` Also extract from the method prototypes.
 
     > Use `ClassName::methodName` as method's name, so that `$class` can be
     > optional.
 
 -   Return Value
 
-    Returns an associated array, with the annonation names as keys.
-    An empty array willy will be returned if no annoations were found.
+    Returns an associated array, with the annotation names as keys.
+    An empty array willy will be returned if no annotations were found.
 
     > **If the target doesn't exist, a exception of type`\L\Core\Exception`
     > will be thrown.**
@@ -194,8 +198,8 @@ This method helps extract the annotations from a property.
 
 -   Return Value
 
-    Returns an associated array, with the annonation names as keys.
-    An empty array willy will be returned if no annoations were found.
+    Returns an associated array, with the annotation names as keys.
+    An empty array willy will be returned if no annotations were found.
 
     > **If the target doesn't exist, a exception of type`\L\Core\Exception`
     > will be thrown.**
@@ -240,8 +244,8 @@ This method helps extract the annotations from a function.
 
 -   Return Value
 
-    Returns an associated array, with the annonation names as keys.
-    An empty array willy will be returned if no annoations were found.
+    Returns an associated array, with the annotation names as keys.
+    An empty array willy will be returned if no annotations were found.
 
     > **If the target doesn't exist, a exception of type`\L\Core\Exception`
     > will be thrown.**

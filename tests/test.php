@@ -7,11 +7,28 @@ require __DIR__ . '/../vendor/autoload.php';
 use \L\Annotation\Extractor;
 
 /**
+ * @test
+ * @author  Angus
+ */
+class AB
+{
+
+    /**
+     * @hello
+     * @test(name=test)
+     */
+    public function test()
+    {
+        echo __METHOD__;
+    }
+}
+
+/**
  * @package litert/annotation
  *
  * @author Angus.Fenying
  */
-class ABC
+class ABC extends AB
 {
     /**
      * @hello
@@ -54,11 +71,18 @@ var_dump(Extractor::fromMethod(
 ));
 
 var_dump(Extractor::fromMethod(
-    'ABC::test'
+    'test',
+    'ABC',
+    true
 ));
 
 var_dump(Extractor::fromClass(
     ABC::class
+));
+
+var_dump(Extractor::fromClass(
+    ABC::class,
+    true
 ));
 
 var_dump(Extractor::fromFunction(

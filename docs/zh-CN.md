@@ -73,13 +73,15 @@ LiteRT/Annotation 提供了 4 个工具方法，可以提取 PHP 类、（类）
 
     ```php
     public static function fromClass(
-        string $class
+        string $class,
+        bool $withParents = false
     ): array;
     ```
 
 -   参数说明
 
     - `$class` 必须是类的完整名称（即包括命名空间，如果有的话）。
+    - `$withParents` 同时从所有父类提取注解。
 
 -   返回值
 
@@ -117,7 +119,8 @@ LiteRT/Annotation 提供了 4 个工具方法，可以提取 PHP 类、（类）
     ```php
     public static function fromMethod(
         string $method,
-        string $class = null
+        string $class = null,
+        bool $withParents = false
     ): array;
     ```
 
@@ -125,6 +128,7 @@ LiteRT/Annotation 提供了 4 个工具方法，可以提取 PHP 类、（类）
 
     - `$method` 方法的完整名称
     - `$class` 类的完整名称（即包括命名空间，如果有的话）。
+    - `$withParents` 同时从所有父类的同名方法提取注解。
 
     > 当 `$method` 写成 `ClassName::methodName` 形式的时候，`$class` 参数可省略。
 

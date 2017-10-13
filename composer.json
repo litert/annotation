@@ -4,7 +4,7 @@
     "type" : "library",
     "license" : "Apache-2.0",
     "minimum-stability": "stable",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "autoload" : {
         "psr-4" : {
             "L\\Annotation\\" : "lib"

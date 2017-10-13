@@ -33,6 +33,7 @@ class Extractor
      *
      * @param string $method
      * @param string|null $class
+     * @param bool $withParents
      *
      * @throws \L\Core\Exception
      *
@@ -40,14 +41,15 @@ class Extractor
      */
     public static function fromMethod(
         string $method,
-        string $class = null
+        string $class = null,
+        bool $withParents = false
     ): array
     {
         if ($class) {
 
             try {
 
-                $method = new \ReflectionMethod("{$class}::{$method}");
+                $refMethod = new \ReflectionMethod($class, $method);
             }
             catch (\ReflectionException $e) {
 
@@ -61,7 +63,7 @@ class Extractor
 
             try {
 
-                $method = new \ReflectionMethod($method);
+                $refMethod = new \ReflectionMethod($method);
             }
             catch (\ReflectionException $e) {
 
@@ -72,9 +74,38 @@ class Extractor
             }
         }
 
-        $docComment = $method->getDocComment();
+        $docComment = $refMethod->getDocComment();
 
-        unset($method);
+        if ($withParents) {
+
+            $class = $refMethod->getDeclaringClass();
+
+            while (1) {
+
+                if ($class = $class->getParentClass()) {
+
+                    $refMethod = $class->getMethod($method);
+
+                    if (!$refMethod) {
+
+                        continue;
+                    }
+
+                    if ($parentDoc = $refMethod->getDocComment()) {
+
+                        $docComment = $docComment === false ?
+                            $parentDoc :
+                            "{$parentDoc}{$docComment}";
+                    }
+                }
+                else {
+
+                    break;
+                }
+            }
+        }
+
+        unset($refMethod, $class);
 
         if ($docComment === false) {
 
@@ -127,13 +158,15 @@ class Extractor
      * Extract the annotations from a class.
      *
      * @param string $class
+     * @param bool $withParents
      *
      * @throws \L\Core\Exception
      *
      * @return array
      */
     public static function fromClass(
-        string $class
+        string $class,
+        bool $withParents = false
     ): array
     {
         try {
@@ -149,6 +182,26 @@ class Extractor
         }
 
         $docComment = $class->getDocComment();
+
+        if ($withParents) {
+
+            while (1) {
+
+                if ($class = $class->getParentClass()) {
+
+                    if ($parentDoc = $class->getDocComment()) {
+
+                        $docComment = $docComment === false ?
+                            $parentDoc :
+                            "{$parentDoc}{$docComment}";
+                    }
+                }
+                else {
+
+                    break;
+                }
+            }
+        }
 
         unset($class);
 

@@ -1,5 +1,9 @@
 # Changes log
 
+## v0.1.2
+
+- Supports extracting annotations from parent classes.
+
 ## v0.1.1
 
 - Allowed blanks between the left-bracket and name of annotation.
