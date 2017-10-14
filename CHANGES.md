@@ -1,5 +1,9 @@
 # Changes log
 
+## v0.1.3
+
+- Fixed bug: Error when fetching annotations of parents' methods.
+
 ## v0.1.2
 
 - Supports extracting annotations from parent classes.

@@ -12,12 +12,19 @@ use \L\Annotation\Extractor;
  */
 class AB
 {
-
     /**
      * @hello
      * @test(name=test)
      */
     public function test()
+    {
+        echo __METHOD__;
+    }
+
+    /**
+     * @testtt(name = ggg)
+     */
+    public function test2()
     {
         echo __METHOD__;
     }
@@ -118,3 +125,9 @@ Error({$e->getCode()}): {$e->getMessage()}
 
 ERROR;
 }
+
+var_dump(Extractor::fromMethod(
+    'test2',
+    'ABC',
+    true
+));

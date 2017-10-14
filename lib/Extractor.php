@@ -78,13 +78,20 @@ class Extractor
 
         if ($withParents) {
 
-            $class = $refMethod->getDeclaringClass();
+            $refClass = $refMethod->getDeclaringClass();
 
             while (1) {
 
-                if ($class = $class->getParentClass()) {
+                if ($refClass = $refClass->getParentClass()) {
 
-                    $refMethod = $class->getMethod($method);
+                    try {
+
+                        $refMethod = $refClass->getMethod($method);
+                    }
+                    catch (\ReflectionException $e) {
+
+                        break;
+                    }
 
                     if (!$refMethod) {
 
@@ -105,7 +112,7 @@ class Extractor
             }
         }
 
-        unset($refMethod, $class);
+        unset($refMethod, $refClass);
 
         if ($docComment === false) {
 
