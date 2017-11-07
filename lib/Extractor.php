@@ -18,8 +18,6 @@ declare (strict_types=1);
 
 namespace L\Annotation;
 
-use L\Core\Exception;
-
 /**
  * This class provides the methods to extract annotations from the document
  * comments of functions, classes, and methods.
@@ -35,7 +33,7 @@ class Extractor
      * @param string|null $class
      * @param bool $withParents
      *
-     * @throws \L\Core\Exception
+     * @throws \L\Annotation\Exception
      *
      * @return array
      */
@@ -55,7 +53,7 @@ class Extractor
 
                 throw new Exception(
                     "Method '{$class}::{$method}' not found.",
-                    Errors\METHOD_NOT_FOUND
+                    Exception::METHOD_NOT_FOUND
                 );
             }
         }
@@ -69,7 +67,7 @@ class Extractor
 
                 throw new Exception(
                     "Method '{$method}' not found.",
-                    Errors\METHOD_NOT_FOUND
+                    Exception::METHOD_NOT_FOUND
                 );
             }
         }
@@ -128,7 +126,7 @@ class Extractor
      * @param string $class
      * @param string $property
      *
-     * @throws \L\Core\Exception
+     * @throws \L\Annotation\Exception
      *
      * @return array
      */
@@ -145,7 +143,7 @@ class Extractor
 
             throw new Exception(
                 "Property '{$class}::{$property}' not found.",
-                Errors\PROPERTY_NOT_FOUND
+                Exception::PROPERTY_NOT_FOUND
             );
         }
 
@@ -167,7 +165,7 @@ class Extractor
      * @param string $class
      * @param bool $withParents
      *
-     * @throws \L\Core\Exception
+     * @throws \L\Annotation\Exception
      *
      * @return array
      */
@@ -184,7 +182,7 @@ class Extractor
 
             throw new Exception(
                 "Class '{$class}' not found.",
-                Errors\CLASS_NOT_FOUND
+                Exception::CLASS_NOT_FOUND
             );
         }
 
@@ -225,7 +223,7 @@ class Extractor
      *
      * @param string $fn
      *
-     * @throws \L\Core\Exception
+     * @throws \L\Annotation\Exception
      *
      * @return array
      */
@@ -241,7 +239,7 @@ class Extractor
 
             throw new Exception(
                 "Function {$fn} not found.",
-                Errors\FUNCTION_NOT_FOUND
+                Exception::FUNCTION_NOT_FOUND
             );
         }
 

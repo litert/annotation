@@ -118,7 +118,7 @@ try {
         'gggx'
     ));
 }
-catch (\L\Core\Exception $e) {
+catch (\L\Annotation\Exception $e) {
 
     echo <<<ERROR
 Error({$e->getCode()}): {$e->getMessage()}

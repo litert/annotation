@@ -94,10 +94,10 @@ This method helps extract the annotations from a class.
     Returns an associated array, with the annotation names as keys.
     An empty array willy will be returned if no annotations were found.
 
-    > **If the target doesn't exist, a exception of type`\L\Core\Exception`
+    > **If the target doesn't exist, a exception of type`\L\Annotation\Exception`
     > will be thrown.**
     >
-    > Error Code: `\L\Annotation\Errors\CLASS_NOT_FOUND`。
+    > Error Code: `\L\Annotation\Exception::CLASS_NOT_FOUND`。
 
 -   Sample
 
@@ -146,10 +146,10 @@ This method helps extract the annotations from a method.
     Returns an associated array, with the annotation names as keys.
     An empty array willy will be returned if no annotations were found.
 
-    > **If the target doesn't exist, a exception of type`\L\Core\Exception`
+    > **If the target doesn't exist, a exception of type`\L\Annotation\Exception`
     > will be thrown.**
     >
-    > Error Code: `\L\Annotation\Errors\METHOD_NOT_FOUND`。
+    > Error Code: `\L\Annotation\Exception::METHOD_NOT_FOUND`。
 
 -   Sample
 
@@ -201,10 +201,10 @@ This method helps extract the annotations from a property.
     Returns an associated array, with the annotation names as keys.
     An empty array willy will be returned if no annotations were found.
 
-    > **If the target doesn't exist, a exception of type`\L\Core\Exception`
+    > **If the target doesn't exist, a exception of type`\L\Annotation\Exception`
     > will be thrown.**
     >
-    > Error Code: `\L\Annotation\Errors\PROPERTY_NOT_FOUND`。
+    > Error Code: `\L\Annotation\Exception::PROPERTY_NOT_FOUND`。
 
 -   Sample
 
@@ -247,10 +247,10 @@ This method helps extract the annotations from a function.
     Returns an associated array, with the annotation names as keys.
     An empty array willy will be returned if no annotations were found.
 
-    > **If the target doesn't exist, a exception of type`\L\Core\Exception`
+    > **If the target doesn't exist, a exception of type`\L\Annotation\Exception`
     > will be thrown.**
     >
-    > Error Code: `\L\Annotation\Errors\FUNCTION_NOT_FOUND`。
+    > Error Code: `\L\Annotation\Exception::FUNCTION_NOT_FOUND`。
 
 -   Sample
 

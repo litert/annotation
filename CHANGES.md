@@ -1,5 +1,11 @@
 # Changes log
 
+## v0.2.0
+
+- Use new Exception class.
+- Move all error constants into class Exception.
+- Updated dependency **litert/core** to v0.2.0 version.
+
 ## v0.1.3
 
 - Fixed bug: Error when fetching annotations of parents' methods.

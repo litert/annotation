@@ -88,8 +88,8 @@ LiteRT/Annotation 提供了 4 个工具方法，可以提取 PHP 类、（类）
     返回值是一个 PHP 关联数组，数组 key 为注解名称，数组的 value 为注解的参数。
     如果没有注解则返回空数组。
 
-    > **如果指定的类不存在，则抛出一个 `\L\Core\Exception` 类型的异常。**
-    > 错误码为 `\L\Annotation\Errors\CLASS_NOT_FOUND`。
+    > **如果指定的类不存在，则抛出一个 `\L\Annotation\Exception` 类型的异常。**
+    > 错误码为 `\L\Annotation\Exception::CLASS_NOT_FOUND`。
 
 -   使用示例
 
@@ -137,8 +137,8 @@ LiteRT/Annotation 提供了 4 个工具方法，可以提取 PHP 类、（类）
     返回值是一个 PHP 关联数组，数组 key 为注解名称，数组的 value 为注解的参数。
     如果没有注解则返回空数组。
 
-    > **如果指定的方法不存在，则抛出一个 `\L\Core\Exception` 类型的异常。**
-    > 错误码为 `\L\Annotation\Errors\METHOD_NOT_FOUND`。
+    > **如果指定的方法不存在，则抛出一个 `\L\Annotation\Exception` 类型的异常。**
+    > 错误码为 `\L\Annotation\Exception::METHOD_NOT_FOUND`。
 
 -   使用示例
 
@@ -190,8 +190,8 @@ LiteRT/Annotation 提供了 4 个工具方法，可以提取 PHP 类、（类）
     返回值是一个 PHP 关联数组，数组 key 为注解名称，数组的 value 为注解的参数。
     如果没有注解则返回空数组。
 
-    >   **如果指定的属性不存在，则抛出一个 `\L\Core\Exception` 类型的异常。**
-    >   错误码为 `\L\Annotation\Errors\PROPERTY_NOT_FOUND`。
+    >   **如果指定的属性不存在，则抛出一个 `\L\Annotation\Exception` 类型的异常。**
+    >   错误码为 `\L\Annotation\Exception::PROPERTY_NOT_FOUND`。
 
 -   使用示例
 
@@ -234,8 +234,8 @@ LiteRT/Annotation 提供了 4 个工具方法，可以提取 PHP 类、（类）
     返回值是一个 PHP 关联数组，数组 key 为注解名称，数组的 value 为注解的参数。
     如果没有注解则返回空数组。
 
-    >   **如果指定的函数不存在，则抛出一个 `\L\Core\Exception` 类型的异常。**
-    >   错误码为 `\L\Annotation\Errors\FUNCTION_NOT_FOUND`。
+    >   **如果指定的函数不存在，则抛出一个 `\L\Annotation\Exception` 类型的异常。**
+    >   错误码为 `\L\Annotation\Exception::FUNCTION_NOT_FOUND`。
 
 -   使用示例
 

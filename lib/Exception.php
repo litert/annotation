@@ -16,11 +16,12 @@
 
 declare (strict_types=1);
 
-namespace L\Annotation\Errors;
+namespace L\Annotation;
 
-const CODE_SEGMENT = 0x00000300;
-
-const METHOD_NOT_FOUND = 0x00000301;
-const CLASS_NOT_FOUND = 0x00000302;
-const PROPERTY_NOT_FOUND = 0x00000303;
-const FUNCTION_NOT_FOUND = 0x00000304;
+class Exception extends \L\Core\Exception
+{
+    const METHOD_NOT_FOUND = 0x00000001;
+    const CLASS_NOT_FOUND = 0x00000002;
+    const PROPERTY_NOT_FOUND = 0x00000003;
+    const FUNCTION_NOT_FOUND = 0x00000004;
+}
