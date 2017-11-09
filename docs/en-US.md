@@ -21,14 +21,29 @@ Annotation of this style will be parsed into `['test' => [true]]`.
 
 ### 1.2. Argument-style
 
+> Notices: 
+> - The arguments can be keyless, since v0.3.0;
+> - These keyless argument will be indexed from 0, since v0.3.0;
+> - The arguments can be written in multi-lines, since v0.3.0.
+
 The annotation with arguments, such as
 
 ```php
 /**
  * @auth ( type = login )
+ * @verify ( modify_user, send_email )
  * @route( method = GET, uri="/" )
+ * @test(
+ *     a,
+ *     b="d",
+ *     x=x=x,
+ *     c=g,
+ *     test value="fsadf\"sa",
+ *     hello world
+ * )
  */
 ```
+
 
 will be parsed into
 
@@ -37,10 +52,23 @@ will be parsed into
     'auth' => [
         ['type' => 'login']
     ],
+    'verify' => [
+        ['modify_user', 'send_email']
+    ],
     'route' => [
         [
             'method' => 'GET',
             'uri' => '/'
+        ]
+    ],
+    'test' => [
+        [
+            'a',
+            'b' => 'd',
+            'x' => 'x=x',
+            'c' => 'g',
+            'test value' => 'fsadf"sa',
+            'hello world'
         ]
     ]
 ]

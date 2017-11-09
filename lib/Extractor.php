@@ -117,7 +117,7 @@ class Extractor
             return [];
         }
 
-        return self::__parseDocComment($docComment);
+        return Parser::parseDocComment($docComment);
     }
 
     /**
@@ -156,7 +156,7 @@ class Extractor
             return [];
         }
 
-        return self::__parseDocComment($docComment);
+        return Parser::parseDocComment($docComment);
     }
 
     /**
@@ -215,7 +215,7 @@ class Extractor
             return [];
         }
 
-        return self::__parseDocComment($docComment);
+        return Parser::parseDocComment($docComment);
     }
 
     /**
@@ -252,77 +252,6 @@ class Extractor
             return [];
         }
 
-        return self::__parseDocComment($docComment);
-    }
-
-    protected static function __parseDocComment(string $docComment): array
-    {
-        $ret = [];
-
-        if (preg_match_all('~@([-\.\w]+)([ \t]*\(([^\r\n]+)?\)|[ \t]+([^\r\n]+))?~', $docComment, $result)) {
-
-            $max = count($result[0]);
-
-            for ($i = 0; $i < $max; ++$i) {
-
-                $data = null;
-
-                if (!$result[2][$i]) {
-
-                    $data = true;
-                }
-                elseif ($result[3][$i]) {
-
-                    $data = [];
-
-                    if (preg_match_all(
-                        '~([-\w]+)[ \t]*\=[ \t]*([^ \t",]+|".+?")~',
-                        $result[3][$i],
-                        $vars
-                    )) {
-
-                        $m = count($vars[0]);
-
-                        for ($j = 0; $j < $m; ++$j) {
-
-                            $val = $vars[2][$j];
-
-                            if ($val[0] === '"') {
-
-                                $data[$vars[1][$j]] = stripcslashes(substr(
-                                    $val,
-                                    1,
-                                    -1
-                                ));
-                            }
-                            else {
-
-                                $data[$vars[1][$j]] = $val;
-                            }
-                        }
-                    }
-                }
-                elseif ($result[4][$i]) {
-
-                    $data = $result[4][$i];
-                }
-                else {
-
-                    $data = true;
-                }
-
-                if (empty($ret[$result[1][$i]])) {
-
-                    $ret[$result[1][$i]] = [$data];
-                }
-                else {
-
-                    $ret[$result[1][$i]][] = $data;
-                }
-
-            }
-        }
-
-        return $ret;
+        return Parser::parseDocComment($docComment);
     }
 }

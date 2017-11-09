@@ -61,11 +61,17 @@ class ABC extends AB
 }
 
 /**
- * @author angus
- *
- * @test ( comment=1 )
- * @hello( speak = yes , to=   "world ")
- * @go()
+ * @auth ( type = login )
+ * @verify ( modify_user, send_email )
+ * @route( method = GET, uri="/" )
+ * @test(
+ *     a,
+ *     b="d",
+ *     x=x=x,
+ *     c=g,
+ *     test value="fsadf\"sa",
+ *     hello world
+ * )
  */
 function test()
 {

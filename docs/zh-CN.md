@@ -23,9 +23,23 @@ LiteRT/Annotation 提供了 4 个工具方法，可以提取 PHP 类、（类）
 ```php
 /**
  * @auth ( type = login )
+ * @verify ( modify_user, send_email )
  * @route( method = GET, uri="/" )
+ * @test(
+ *     a,
+ *     b="d",
+ *     x=x=x,
+ *     c=g,
+ *     test value="fsadf\"sa",
+ *     hello world
+ * )
  */
 ```
+
+> 注意：
+> - 从 v0.3.0 开始，参数式注解中的参数可以没有 key，只有值。
+> - 从 v0.3.0 开始，没有 key 的参数将被赋予从 0 开始递增的 key。
+> - 从 v0.3.0 开始，参数可以分成多行填写。
 
 将被解析为：
 
@@ -34,10 +48,23 @@ LiteRT/Annotation 提供了 4 个工具方法，可以提取 PHP 类、（类）
     'auth' => [
         ['type' => 'login']
     ],
+    'verify' => [
+        ['modify_user', 'send_email']
+    ],
     'route' => [
         [
             'method' => 'GET',
             'uri' => '/'
+        ]
+    ],
+    'test' => [
+        [
+            'a',
+            'b' => 'd',
+            'x' => 'x=x',
+            'c' => 'g',
+            'test value' => 'fsadf"sa',
+            'hello world'
         ]
     ]
 ]

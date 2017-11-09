@@ -1,5 +1,10 @@
 # Changes log
 
+## v0.3.0
+
+- Allowed multi-line argument-style annotations.
+- Allowed keyless argument in argument-style.
+
 ## v0.2.0
 
 - Use new Exception class.

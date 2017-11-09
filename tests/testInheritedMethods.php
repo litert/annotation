@@ -8,6 +8,13 @@ use \L\Annotation\Extractor;
 
 class A
 {
+    /**
+     * @test2(val = 5)
+     */
+    public function method()
+    {
+
+    }
 }
 
 class B extends A
